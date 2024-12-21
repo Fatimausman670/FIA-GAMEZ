@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FIA GAMEZ</title>
+    <link rel="icon" type="image/png" href="../FIA.png">
+    <link rel="stylesheet" href="explore.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: plum;
+            display: flex;
+            height: 100vh;
+            overflow: hidden; 
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .side-video {
+            width: 15vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .side-video video {
+            width: 100%;
+            height: 100vh; 
+            object-fit: cover;
+        }
+
+        .content-wrapper {
+            width: 85vw; 
+            padding-top: 128px;
+            padding-left: 25px;
+            padding-right: 10px;
+            padding-bottom: 37px;
+            overflow-y: scroll; 
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px; 
+        }
+
+        .flip-card {
+            perspective: 1000px; 
+            text-decoration: none;
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 95%;
+            height: 93%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flip-card-back {
+            background-color: plum;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        footer {
+    width: 100%;
+    padding: 0.0001px;
+    background-color: #333; 
+    color: white;         
+    text-align: center;    
+    position: fixed;        
+    bottom: 0;              
+    left: 0;
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FIA GAMEZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="form.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="side-video">
+            <video autoplay muted loop>
+                <source src="vid.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="image-gallery" id="gallery"></div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: "table tennis.png", text: "Table Tennis", link: "games/table tennis.html", id: "tt" },
+            { src: "switch.png", text: "Switch", link: "games/switch.html", id: "switch" },
+            { src: "smore clicker.png", text: "Smore Clicker", link: "games/smore clicker.html", id: "sc" },
+            { src: "shadow ninja.png", text: "Shadow Ninja", link: "games/shadow ninja.html", id: "sn" },
+            { src: "pvz.png", text: "Plants VS Zombies", link: "games/pvz.html", id: "pvz" },
+            { src: "press ctrl.png", text: "Press CTRL", link: "games/press ctrl.html", id: "press" },
+            { src: "potion shop.png", text: "Potion Shop", link: "games/potion shop.html", id: "potion" },
+            { src: "mosquito game.png", text: "Mosquito Game", link: "games/mosquito game.html", id: "mosquito" },
+            { src: "look after baby.png", text: "Look After Baby Cinnimaroll", link: "games/look after baby.html", id: "baby" },
+            { src: "key master.png", text: "Key Master", link: "games/key master.html", id: "key" },
+            { src: "glow bound.png", text: "Glow Bound", link: "games/glow bound.html", id: "glow" },
+            { src: "gem collect.png", text: "Gem Collect", link: "games/gem collect.html", id: "gem" },
+            { src: "find the bone.png", text: "Ralph's Bone", link: "games/ralphs bone.html", id: "bone" },
+            { src: "donut game.png", text: "Donut Game", link: "games/donut game.html", id: "donut" },
+            { src: "decorate.png", text: "Decorate -A Little Bit-", link: "games/decorate.html", id: "decorate" },
+            { src: "brick breaker.png", text: "Brick Breaker", link: "games/brick breaker.html", id: "brick" },
+            { src: "block blast.png", text: "Block Blast", link: "games/block blast.html", id: "block" },
+            { src: "fruit flip.png", text: "Fruit Flip", link: "games/fruit flip.html", id: "fruit" },
+            { src: "icy peaks.png", text: "Icy Peaks", link: "games/icy peaks.html", id: "icy" },
+            { src: "duck.png", text: "Duck-Pocalypse", link: "games/duck-pocalyse.html", id: "duck" },
+            { src: "flappy bird.png", text: "Flappy Bird", link: "games/flappy bird.html", id: "flappy" },
+            { src: "boat game.png", text: "Bumper Boats Engine", link: "games/bumper boats engine.html", id: "boat" },
+            { src: "plane rush.png", text: "Plane Rush", link: "games/plane rush.html", id: "plane" },
+            { src: "change color.png", text: "Change Color", link: "games/change color.html", id: "color" },
+            { src: "corridor.png", text: "Corridors", link: "games/corridor.html", id: "corridor" },
+            { src: "pokimon platformer.png", text: "Pokémon Platformer", link: "games/pokimon platformer.html", id: "pokimon" },
+            { src: "snowman survival.png", text: "Snowman Survival", link: "games/snowman survival.html", id: "snowman" },
+            { src: "cookie cutting game.png", text: "Cookie Cutitng Game", link: "games/cookie cutting game.html", id: "cookie" },
+            { src: "avoid of dragon.png", text: "Avoid of Dragon", link: "games/avoid of dragon.html", id: "dragon" },
+            { src: "mario world dash.png", text: "Mario World Dash", link: "games/mario world dash.html", id: "mario" },
+            { src: "pop and drop.png", text: "Pop and Drop", link: "games/pop and drop.html", id: "pop" },
+            { src: "space shooter.png", text: "Space Shooter Bullet Hell", link: "games/space shooter bulley hell.html", id: "space shooter" },
+            { src: "space roller.png", text: "Space Roller", link: "games/space roller.html", id: "space roller" },
+            { src: "dodge.png", text: "Dodge", link: "games/Dodge.html", id: "dodge" },
+            { src: "infinite platformer.png", text: "Infinite Platformer", link: "games/infinite platform.html", id: "platform" },
+            { src: "bmwu.png", text: "Bouncing My Way Up", link: "games/bmwu.html", id: "bmwu" },
+            { src: "dunk master.png", text: "Dunk Master", link: "games/dunk master.html", id: "dunk" },
+            { src: "circle in.png", text: "Circle-In", link: "games/circle-in.html", id: "circle" },
+            { src: "oneline puzzle.png", text: "One-Line Puzzle", link: "games/one-line puzzle.html", id: "oneline" },
+            { src: "Basket.jpg", text: "Basket", link: "games/basket.html", id: "basket" },
+            { src: "Basket hoop.jpg", text: "Basket Hoop", link: "games/basket hoop.html", id: "hoop" },
+            { src: "TheKinkdom.jpg", text: "The Kingdom of Nor", link: "games/kingdom of nor.html", id: "nor" },
+            { src: "Chrisrmas.scroll.jpg", text: "Christmas Scroll Platformer", link: "games/christmas scroll.html", id: "scroll" },
+            { src: "Defenders of scrach.jpg", text: "Defenders of Scratch", link: "games/defenders of scratch.html", id: "defend" },
+            { src: "Dodge mania.jpg", text: "Dodge Mania", link: "games/dodge mania.html", id: "mania" },
+            { src: "figitspinner.jpg", text: "Fidget Spinner", link: "games/fidget spinner.html", id: "fidget" },
+            { src: "Hero Guy.jpg", text: "Hero Guy", link: "games/hero guy.html", id: "hero guy" },
+            { src: "Minecraft.jpg", text: "Minecraft Platformer", link: "games/minecraft platformer.html", id: "minecraft" },
+            { src: "Ninja collector.jpg", text: "Ninja", link: "games/ninja collector.html", id: "ninja" },
+            { src: "runcity.jpg", text: "City Run", link: "games/city run.html", id: "city" },
+            { src: "SpkeGame.jpg", text: "Spike Rain", link: "games/spike rain.html", id: "spike" },
+            { src: "Square Runner.jpg", text: "Square Runner", link: "games/square runner.html", id: "square" },
+            { src: "The tower.jpg", text: "The Tower", link: "games/the tower.html", id: "tower" },
+            { src: "snake unlim.png", text: "Snake Unlimited", link: "games/snake unlimited.html", id: "sunlim" },
+            { src: "tic tac toe.PNG", text: "Tic Tac Toe", link: "tic.html", id: "tic" },
+        ];
+
+        const gallery = document.getElementById("gallery");
+        images.forEach(image => {
+            const card = `
+                        <a href="${image.link}" class="flip-card">
+                            <div class="flip-card-inner" id="${image.id}">
+                                <div class="flip-card-front">
+                                    <img src="${image.src}" alt="${image.text}">
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>${image.text}</p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+            gallery.innerHTML += card;
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 FIA GAMEZ. All Rights Reserved.</p>
+    </footer>
+    
+    </body>
+    </html>

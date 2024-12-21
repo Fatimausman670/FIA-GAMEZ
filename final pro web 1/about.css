@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    min-height: 115vh;
+    background-image: url('1044504.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+  header {
+    width: 100%;
+    background-color: #05181a;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect overall size */
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b84294;
+    text-decoration: none;
+  
+}
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #b84294;
+  }
+  
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #b84294;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links li a:hover::after {
+    width: 100%;
+  }
+  .title {
+    color: #f3dc09;
+    font-size: 2.5rem;
+    animation: bounce 1s infinite alternate;
+}
+
+/* About Section */
+.about-section {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.intro {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.rage {
+    color: #ffffff;
+    font-style: italic;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    background: transparent; /* Remove the background */
+    box-shadow: none;
+    padding: 0; /* Remove padding */
+  }
+
+.info-card {
+    width: 45%;
+    background: #d3bb52;
+    border: 2px solid #464236;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    flex: 1 1 45%; 
+    text-decoration: none;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+    background: #d3c8a6;
+}
+
+/* Interactive Mascot */
+.mascot-container {
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.mascot-container {
+    width: 150px;
+    transition: transform 0.5s;
+}
+
+.mascot-container:hover {
+    transform: translateY(-10px) scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+footer {
+  width: 100%;
+  padding: 0.0001px;
+  background-color: #333; 
+  color: white;         
+  text-align: center;    
+  position: fixed;        
+  bottom: 0;              
+  left: 0;
+}
+
+/* Animations */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+ 
+  
+ 

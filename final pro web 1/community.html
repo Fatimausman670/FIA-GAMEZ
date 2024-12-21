@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Community Forum</title>
+  <link rel="icon" type="image/png" href="../FIA.png">
+  <style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e0f7fa, #c4f0f7);
+      color: #333;
+      background-image: url('wp.jpg');
+    }
+  
+    header {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 30px;
+      border-bottom: 4px solid #004d40;
+    }
+ 
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #b84294;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #b84294;
+    }
+
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #b84294;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+  
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+  
+    .section {
+      background-color: #ffffff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+  
+    .section h2 {
+      font-size: 26px;
+      color: #00796b;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #b2dfdb;
+      padding-bottom: 10px;
+    }
+  
+    .section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+  
+    .section ul li {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+  
+    .section ul li span {
+      font-weight: bold;
+      color: #ff5722;
+    }
+  
+    .cta-button {
+      background-color: #ff5722;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
+      font-size: 18px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+  
+    .cta-button:hover {
+      background-color: #e64a19;
+    }
+  
+    .highlight-posts ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .highlight-posts ul li {
+      width: 48%;
+      margin-bottom: 10px;
+    }
+  
+    .highlight-posts h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+  
+    
+    footer {
+    width: 100%;
+    padding: 0.0001px;
+    background-color: #00796b; 
+    color: white;         
+    text-align: center;    
+    position: fixed;        
+    bottom: 0;              
+    left: 0;
+}
+  
+    /* Hover effects */
+    .section:hover {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+  
+    .section ul li:hover {
+      color: #009688;
+    }
+  
+    .section ul li span:hover {
+      color: #ffcc80;
+    }
+  
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      .section {
+        margin: 10px;
+        padding: 15px;
+      }
+  
+      .section ul li {
+        font-size: 16px;
+      }
+  
+      header {
+        padding: 15px;
+      }
+    }
+  
+    @media screen and (max-width: 480px) {
+      .section {
+        margin: 5px;
+        padding: 10px;
+      }
+  
+      .section ul li {
+        font-size: 14px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="http://127.0.0.1:5501/index.html" class="logo">FIA GAMEZ</a>
+      <ul class="nav-links">
+          <li><a href="http://127.0.0.1:5501/index.html">Home</a></li>
+          <li><a href="http://127.0.0.1:5501/explore.html">Explore</a></li>
+          <li><a href="http://127.0.0.1:5501/about.html">About</a></li>
+          <li><a href="http://127.0.0.1:5501/account.html">Account</a></li>
+      </ul>
+  </nav>
+  <h1>🎮 Welcome to the Gaming Community Forum! 🎮</h1>
+  </header>
+
+<div class="container">
+  <!-- Forum Overview Section -->
+  <div class="section">
+    <h2>2. Categories/Sections Overview</h2>
+    <ul>
+      <li><span>General Discussions:</span> Chat about anything gaming-related.</li>
+      <li><span>Tips & Tricks:</span> Share and discover game strategies, guides, and secrets.</li>
+      <li><span>Game Reviews:</span> Post reviews or check what others think of new games.</li>
+      <li><span>Multiplayer Matchmaking:</span> Find teammates for your favorite games.</li>
+      <li><span>Tech Support:</span> Get help with technical issues like lag, bugs, or hardware problems.</li>
+      <li><span>Announcements & Updates:</span> Stay updated with the latest news about the website or community events.</li>
+      <li><span>Fan Art & Content Sharing:</span> Share your game screenshots, fan art, and custom content.</li>
+    </ul>
+  </div>
+
+  <!-- Community Guidelines Section -->
+  <div class="section">
+    <h2>3. Community Guidelines</h2>
+    <ul>
+      <li><span>Be respectful:</span> No harassment, bullying, or offensive language.</li>
+      <li><span>Stay on topic:</span> Post in the appropriate category.</li>
+      <li><span>No spamming:</span> Avoid repetitive or irrelevant posts.</li>
+      <li><span>Use spoiler tags:</span> Mark spoilers so you don’t ruin the fun for others.</li>
+      <li><span>Report issues:</span> If you see inappropriate content, report it to moderators.</li>
+      <li><span>Follow fair play:</span> Promote positive gaming and avoid cheating discussions.</li>
+    </ul>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div class="section">
+    <h2>4. Call to Action – Join the Community!</h2>
+    <p>🔗 Ready to join the discussion? Create an account or log in now to share your thoughts, ask questions, and be part of our growing community. Let’s game together!</p>
+  </div>
+
+  <!-- Community Features Section -->
+  <div class="section">
+    <h2>5. Highlight Community Features</h2>
+    <ul>
+      <li><span>User Profiles:</span> Customize your gaming profile and share your favorite games.</li>
+      <li><span>Leaderboards:</span> Active members can earn badges and rank higher in the community.</li>
+      <li><span>Polls & Discussions:</span> Create polls to ask questions and gather opinions.</li>
+      <li><span>Direct Messaging:</span> Connect with other players privately.</li>
+    </ul>
+  </div>
+
+  <!-- Highlight Recent or Popular Posts Section -->
+  <div class="highlight-posts section">
+    <h3>6. Showcase Recent or Popular Posts</h3>
+    <ul>
+      <li><span>Popular Topics:</span> "Best Gaming Mouse for 2024?" | "Tips for Winning Battle Royale Matches"</li>
+      <li><span>Recent Posts:</span> "New Updates for Apex Legends" | "Looking for Co-op Partners in GTA Online"</li>
+    </ul>
+  </div>
+
+  <!-- Moderator Call Section -->
+  <div class="section">
+    <h2>7. Invite Moderators and Contributors</h2>
+    <p>🚀 Want to be a Forum Moderator? We're looking for passionate gamers to help us keep the community fun and engaging. If interested, drop us a message!</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Gaming Community Forum. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

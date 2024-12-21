@@ -1,0 +1,113 @@
+body {
+    min-height: 115vh;
+    background-image: url('Gemini_Generated_Image_eojisreojisreoji.jpeg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    width: 100%;
+    background: #05181a;
+    padding: 0;
+    margin: 0;
+    position: fixed; /* Fix the header to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Ensure the header stays on top */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b84294;
+    text-decoration: none;
+  
+}
+
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #b84294;
+  }
+  
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #b84294;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links li a:hover::after {
+    width: 100%;
+  }
+  
+  form {
+    background-color: rgba(94, 195, 253, 0.8); /* Semi-transparent white background */
+    padding: 40px; 
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 400px; 
+    margin: 0 auto; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px; 
+    text-align: center; /* Center the labels */
+  }
+  input {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    margin-bottom: 15px; /* Increased margin */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #092849;
+    color: #c0a4a4;
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+  }
+  button:hover{
+    background: #dad72c;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #b886a8;
+  }

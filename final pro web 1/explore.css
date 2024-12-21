@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+header {
+    width: 100%;
+    background: #05181a;
+    padding: 0;
+    margin: 0;
+    position: fixed; /* Fix the header to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* Ensure the header stays on top */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b84294;
+    text-decoration: none;
+  
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #b84294;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #b84294;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+#explore {
+  text-align: center;
+  padding: 20px;
+}
+
+#explore h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+#explore ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Display list items horizontally */
+  flex-wrap: wrap; /* Wrap items to a new line if they don't fit */
+  justify-content: space-around; /* Space items evenly */
+}
+
+#explore li {
+  list-style: none;
+  margin: 10px;
+  text-align: center;
+}
+
+#explore a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  display: inline-block;
+  display: block; /* Make links block-level elements to take full width */
+  text-align: center;
+}
+
+#explore a:hover {
+  background-color: #ddd;
+}
+#explore img{
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+
+}
